@@ -36,6 +36,12 @@ protected
     authorized_keys_path =
       ::File.join(Dir.home(new_resource.user), ".ssh", "authorized_keys")
 
+    if ! Dir.exist?(::File.dirname(authorized_keys_path))
+      Dir.mkdir(::File.dirname(authorized_keys_path))
+    end
+
+    FileUtils.chown(new_resource.user, nil, ::File.dirname(authorized_keys_path))
+
     f = file(authorized_keys_path) do
       owner    new_resource.user
       mode     00644
