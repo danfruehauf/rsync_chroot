@@ -68,6 +68,14 @@ protected
   #
   # @return [String]
   def authorized_keys_line(rsync_options, directory, ssh_options, key, comment)
+    if rsync_options.nil?
+      rsync_options = node['rsync_chroot']['rsync_options']
+    end
+
+    if ssh_options.nil?
+      ssh_options = node['rsync_chroot']['ssh_options']
+    end
+
     line = "command=\"rsync #{rsync_options} --server . #{directory}\""
     line += "," + ssh_options
     line += " " + key

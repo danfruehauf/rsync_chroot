@@ -14,9 +14,6 @@
 # limitations under the License.
 #
 
-# User to configure rsync users with
-default['rsync_chroot']['user'] = "rsync"
-
 # Default options for rsync server
 default['rsync_chroot']['rsync_options'] = "-a"
 

@@ -10,8 +10,7 @@ Requirements
 
 Attributes
 ----------
- * `node['rsync_chroot']['user']` - user to configure with rsync_chroot entries, rsync_chroot cookbook DOES NOT TAKE FOR THE CREATION OF THIS USER
- * `node['rsync_chroot']['rsync_options']` - rsync options to use, `--server` is implied but this gives you control of some extra options
+ * `node['rsync_chroot']['rsync_options']` - default rsync options to use, `--server` is implied but this gives you control of some extra options
  * `node['rsync_chroot']['ssh_options']` - default ssh options to include in `authorized_keys`
 
 LWRP
