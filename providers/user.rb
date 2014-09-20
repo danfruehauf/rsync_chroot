@@ -31,7 +31,11 @@ protected
   # Build and write authorized_keys
   #
   def write_conf
-    # TODO verify new_resource.user exists!
+    begin
+      Etc::getpwnam(new_resource.user)
+    rescue
+      Chef::Application.fatal!("User '#{new_resource.user}' does not exist, cannot create rsync_chroot entry")
+    end
 
     authorized_keys_path =
       ::File.join(Dir.home(new_resource.user), ".ssh", "authorized_keys")
