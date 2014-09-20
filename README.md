@@ -10,7 +10,8 @@ Requirements
 
 Attributes
 ----------
-TODO
+ * `node['rsync_chroot']['rsync_options']` - default rsync options to use, `--server` is implied but this gives you control of some extra options
+ * `node['rsync_chroot']['ssh_options']` - default ssh options to include in `authorized_keys`
 
 LWRP
 ----

@@ -21,9 +21,9 @@ actions :add, :remove
 default_action :add
 
 attribute :name,          :kind_of => String, :name_attribute => true
-attribute :user,          :kind_of => String, :default  => node['rsync_chroot']['user']
-attribute :rsync_options, :kind_of => String, :default  => node['rsync_chroot']['rsync_options']
+attribute :user,          :kind_of => String, :required => true
+attribute :rsync_options, :kind_of => String, :default  => nil
 attribute :directory,     :kind_of => String, :required => true
-attribute :ssh_options,   :kind_of => String, :default  => node['rsync_chroot']['ssh_options']
+attribute :ssh_options,   :kind_of => String, :default  => nil
 attribute :comment,       :kind_of => String, :default  => ""
 attribute :key,           :kind_of => String, :required => true
