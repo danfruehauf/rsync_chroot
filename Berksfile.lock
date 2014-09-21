@@ -1,0 +1,11 @@
+DEPENDENCIES
+  fake
+    path: test/fixtures/cookbooks/fake
+  rsync_chroot
+    path: .
+    metadata: true
+
+GRAPH
+  fake (1.0.0)
+    rsync_chroot (>= 0.0.0)
+  rsync_chroot (1.0.0)
