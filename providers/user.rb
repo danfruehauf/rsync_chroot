@@ -45,11 +45,12 @@ protected
     end
 
     FileUtils.chown(new_resource.user, nil, ::File.dirname(authorized_keys_path))
+    content = authorized_keys_content
 
     f = file(authorized_keys_path) do
       owner    new_resource.user
       mode     00644
-      content  authorized_keys_content.join("\n") + "\n"
+      content  content.join("\n") + "\n"
     end
 
     new_resource.updated_by_last_action(f.updated?)
@@ -98,7 +99,7 @@ protected
           resource.send('comment')
         )
       end
-
-      content
     end
+
+    content
   end
