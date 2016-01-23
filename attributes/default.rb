@@ -15,7 +15,7 @@
 #
 
 # Default options for rsync server
-default['rsync_chroot']['rsync_options'] = "-a"
+default['rsync_chroot']['rsync_options'] = "-r"
 
 # Default ssh options for each authorized key
 default['rsync_chroot']['ssh_options'] = "no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding"
